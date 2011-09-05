@@ -7,7 +7,7 @@ class ActiveRecord::Base
     when Array
         ids = pks.map{|pk| val['attributes'][pk.to_s] }
     else
-        ids = val['attributes']['id']
+        ids = val['attributes'][pks.to_s]
     end
 
     klass.find(ids)
